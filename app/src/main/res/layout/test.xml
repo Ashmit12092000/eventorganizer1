@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp">
+
+    <!-- Main content area for the event -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageViewEvent"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.App.CornerRadius"
+            tools:src="@drawable/image_placeholder" />
+
+        <!-- Use a RelativeLayout to easily position the edit menu button -->
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1">
+
+            <!-- The menu button (three dots) for Edit option -->
+            <ImageView
+                android:id="@+id/buttonMenu"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="Options"
+                android:focusable="true"
+                android:padding="4dp"
+                android:src="@drawable/ic_more_vert"
+                android:visibility="gone"
+                app:tint="@color/profile_secondary_text"
+                tools:visibility="visible" />
+
+            <!-- Text content (Title, Description, Date) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@id/buttonMenu"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewEventTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/profile_primary_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="Fall Festival" />
+
+                <TextView
+                    android:id="@+id/textViewEventDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:textColor="@color/profile_secondary_text"
+                    android:textSize="14sp"
+                    tools:text="Join us for a night of music and fun at the annual Fall Festival. Featuring live bands, food trucks, and more." />
+
+                <TextView
+                    android:id="@+id/textViewEventDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/profile_secondary_text"
+                    android:textSize="14sp"
+                    tools:text="October 26, 2024" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <!-- Action buttons area -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- View Action -->
+        <LinearLayout
+            android:id="@+id/layoutView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/action_icon_background"
+                android:padding="8dp"
+                android:src="@drawable/ic_view"
+                app:tint="@color/profile_primary_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="View"
+                android:textColor="@color/profile_secondary_text" />
+        </LinearLayout>
+
+        <!-- Comment Action -->
+        <LinearLayout
+            android:id="@+id/layoutComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/action_icon_background"
+                android:padding="8dp"
+                android:src="@drawable/ic_comment"
+                app:tint="@color/profile_primary_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Comment"
+                android:textColor="@color/profile_secondary_text" />
+        </LinearLayout>
+
+        <!-- Spacer to push the admin delete button to the end -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- ADMIN ONLY: Delete Action -->
+        <LinearLayout
+            android:id="@+id/layoutDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/action_icon_background"
+                android:padding="8dp"
+                android:src="@drawable/ic_delete"
+                app:tint="@android:color/holo_red_dark" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Delete"
+                android:textColor="@android:color/holo_red_dark" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Divider Line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="#E0E0E0" />
+
+</LinearLayout>

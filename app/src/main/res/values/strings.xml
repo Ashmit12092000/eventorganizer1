@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">eventorganizer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="api">2b00147c9e92a6a985ebdc4496d9c6ca</string>
+    <string-array name="default_avatar_urls">
+        <item>https://i.ibb.co/TMfwv7wr/avatar1.png</item>
+        <item>https://i.ibb.co/bRMDBnGm/avatar2.png</item>
+        <item>https://i.ibb.co/Y4NG4HxR/avatar3.png</item>
+        <item>https://i.ibb.co/PnpHjcN/avatar4.png</item>
+        <item>https://i.ibb.co/m5ZhR6c2/avatar5.png</item>
+        <item>https://i.ibb.co/8nQFXj4V/avatar6.png</item>
+    </string-array>
+</resources>

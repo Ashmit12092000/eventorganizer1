@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/profile_background"
+    tools:context=".fragments.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/imageViewBackButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:contentDescription="Back"
+        android:focusable="true"
+        android:padding="12dp"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/profile_primary_text" />
+
+    <TextView
+        android:id="@+id/textViewProfileTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textColor="@color/profile_primary_text"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBackButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBackButton" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageViewProfileAvatar"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="24dp"
+        android:padding="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBackButton"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.App.Circle"
+        tools:src="@drawable/ic_profile" />
+
+    <TextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/profile_primary_text"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewProfileAvatar"
+        tools:text="Sophia Carter" />
+
+    <TextView
+        android:id="@+id/textViewUserStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/evently_blue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserName"
+        tools:text="Event Enthusiast • Joined 2025" />
+
+    <TextView
+        android:id="@+id/textViewHostedEventsTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:text="Hosted Events"
+        android:textColor="@color/profile_primary_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewUserStatus" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewHostedEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="re"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_container_background"
+        android:elevation="2dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHostedEventsTitle"
+        tools:itemCount="1"
+        tools:layout_height="80dp"
+        tools:listitem="@layout/item_registered_event" />
+
+    <TextView
+        android:id="@+id/textViewNoHostedEvents"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_container_background"
+        android:elevation="2dp"
+        android:gravity="center"
+        android:padding="32dp"
+        android:text="You haven't hosted any events yet."
+        android:textColor="@color/profile_secondary_text"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewHostedEventsTitle"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewPersonalInformationTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:text="Personal Information"
+        android:textColor="@color/profile_primary_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerViewHostedEvents" />
+
+    <LinearLayout
+        android:id="@+id/layout_personal_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_container_background"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPersonalInformationTitle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:textColor="@color/profile_secondary_text"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/profile_primary_text"
+            android:textSize="16sp"
+            tools:text="sophia.carter@email.com" />
+
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonLogout"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Log out"
+        android:textColor="@color/profile_link_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_personal_info" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

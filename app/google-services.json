@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "284227959991",
+    "project_id": "event-organizer-f387a",
+    "storage_bucket": "event-organizer-f387a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284227959991:android:23e981dad0ea680909e132",
+        "android_client_info": {
+          "package_name": "com.example.eventorganizer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284227959991-oglqck8a1jb8af9fu648ja45ep9nrpa6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0ETvo5Axb2KZ0bxI_c9FHGVLKHLTSd90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284227959991-oglqck8a1jb8af9fu648ja45ep9nrpa6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
