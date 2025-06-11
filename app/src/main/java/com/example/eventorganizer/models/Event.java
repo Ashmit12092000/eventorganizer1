@@ -12,7 +12,7 @@ public class Event {
     private String creatorEmail;
     private String time;
     private String location;
-    private String imageUrl; // This field was missing
+    private String imageUrl; 
 
     // An empty constructor is required for Firestore
     public Event() { }
@@ -42,6 +42,6 @@ public class Event {
     public void setCreatorId(String creatorId) { this.creatorId = creatorId; }
     public void setCreatorEmail(String creatorEmail) { this.creatorEmail = creatorEmail; }
 
-    // This is the setter method that was missing
+    
     public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
 }
