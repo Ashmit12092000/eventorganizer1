@@ -22,8 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-// NOTE: This class contains the logic for your Registration Screen.
-// The class name has been changed to "Test" as requested.
+
 public class RegistrationActivity 
 
  extends AppCompatActivity {
@@ -40,7 +39,7 @@ public class RegistrationActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // This class will use the modern Material Design layout.
-        // Make sure you have the updated 'activity_registration.xml' file.
+       
         setContentView(R.layout.activity_registration);
 
         // --- Toolbar Setup ---
